@@ -12,7 +12,33 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    NSMutableString *inStr = [[NSMutableString alloc]init];
+
+    
+    if (number<otherNumber) {
+  
+    for (NSInteger i=number; i<=otherNumber;i++){
+                [inStr appendString:[NSString stringWithFormat:@"%ld ",(long)i]];
+        [inStr setString:[inStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+
+
+    }
+    }
+    else {
+        
+        for (NSInteger i=otherNumber; i<=number;i++){
+            [inStr appendString:[NSString stringWithFormat:@"%ld ",(long)i]];
+            [inStr setString:[inStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+            
+            
+        }
+    }
+
+    NSLog(@"instring %@",inStr);
+    return inStr;
+    
 }
+
+
 
 @end
