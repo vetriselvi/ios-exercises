@@ -17,8 +17,8 @@
 //    if ([serverObject respondsToSelector:@selector(doubleValue)]) {   /* This will check for the particular method- specific to a class' method(selector is a method))*/
 //        return [serverObject doubleValue];
 //    }
-    
-    // demo for class specific stuff
+    /* demo
+    //
     NSDictionary *demoCharacterDictionary = @{
                                               @"favorite drink" : @(12), //integer
                                               @"others' favorite" : @"coffee"
@@ -32,19 +32,29 @@
     
    /* if([favoriteDrink2 respondsToSelector:@selector(stringByAppendingString:)]) {
          [favoriteDrink stringByAppendingString:@"not a string!!"];
-    } */
+    }
     
+    */
+    
+    /*
+     
+     //    if(favoriteDrink){ // if (favoriteDrink != nil && [favoriteDrink isKindOfClass:[NSString class]]) { x}
+     //        return favoriteDrink;
+     //    }
+     */
+    
+    //~~~~~~~~~~~~~~~~Code starts here~~~~~~~~~~~~~~~~~~~~
+    
+    NSString *favoriteDrink = characterDictionary[@"favorite drink"];
     //specific to a class
     if ([favoriteDrink isKindOfClass:[NSString class]]) { // if (favoriteDrink != nil && [favoriteDrink isKindOfClass:[NSString class]]) { x}
 
         return favoriteDrink;
     }
-    
-//    if(favoriteDrink){ // if (favoriteDrink != nil && [favoriteDrink isKindOfClass:[NSString class]]) { x}
-//        return favoriteDrink;
-//    }
-    
-    return nil; //doubt - nil is an id
+
+    //return favoriteDrink;
+
+   return nil; //doubt - nil is an id
     
    
 }
