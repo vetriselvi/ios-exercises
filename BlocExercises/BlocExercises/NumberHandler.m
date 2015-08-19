@@ -12,14 +12,26 @@
 
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
     /* WORK HERE */
-    NSInteger intValue = [number intValue]*2;
-    NSNumber *ans = [NSNumber numberWithInt:intValue];
+    
+    int i = 12;
+    NSInteger integer = 14;
+    NSNumber *numberWithInt = [NSNumber numberWithInt:i];
+    NSNumber *numberWithInteger = [NSNumber numberWithInteger:integer];
+    
+    NSInteger intValue = [number integerValue]*2; //get the integer value and NOT ints
+    NSNumber *ans = [NSNumber numberWithInteger:intValue]; //(int)intValue? doubt
     return ans ;
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    NSMutableArray *arrayOfNSInteger = [NSMutableArray array]; //[NSMutableArray array] without this it'll be null
+    NSMutableArray *arrayOfNSInteger = [NSMutableArray array]; //imp : [NSMutableArray array] without this it'll be null
+    
+    NSInteger lowerNumber = MIN(number, otherNumber);
+    NSInteger higherNumber = MAX(number, otherNumber);
+    for (NSInteger i = lowerNumber; i < higherNumber; i++) {
+        [arrayOfNSInteger addObject:@(i)];
+    }
     
     if (number<otherNumber) {
         for(NSInteger i= number; i <= otherNumber; i++){
@@ -31,9 +43,9 @@
             [arrayOfNSInteger addObject:[NSNumber numberWithInteger:i]];
         }
     }
-    NSArray *arrayAns = [arrayOfNSInteger copy];
+    //NSArray *arrayAns = [arrayOfNSInteger copy];
 
-    return arrayAns ;
+    return [arrayOfNSInteger copy] ;
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
