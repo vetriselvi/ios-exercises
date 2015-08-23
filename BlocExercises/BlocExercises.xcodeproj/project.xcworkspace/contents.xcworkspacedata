@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../../../Desktop/properties_vloc/Car.h">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../../Desktop/properties_vloc/Car.m">
+   </FileRef>
+   <FileRef
       location = "self:BlocExercises.xcodeproj">
    </FileRef>
 </Workspace>

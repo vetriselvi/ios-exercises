@@ -10,6 +10,10 @@
 
 @interface StuffRememberer : NSObject
 
+
+@property(strong,nonatomic) NSMutableArray *mutableArrayWithStrong;
+@property(copy,nonatomic) NSMutableArray *mutableArrayWithCopy;
+@property(assign) CGFloat cgfloatVariable;
 /*
  
  In this class, there are three pairs of methods.
@@ -32,6 +36,7 @@
  @param arrayToRemember A mutable array.
  */
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
+
 
 /**
  Provides the remembered mutable array.
